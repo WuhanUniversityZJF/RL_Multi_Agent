@@ -1,0 +1,8 @@
+pettingzoo[mpe]
+gym
+scipy
+transforms3d
+pyyaml
+opencv-python
+tensorboard
+tqdm

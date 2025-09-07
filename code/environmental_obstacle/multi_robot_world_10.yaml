@@ -1,0 +1,41 @@
+world:
+  world_height: 10
+  world_width: 10
+  step_time: 0.1
+  xy_resolution: 0.02 # meter
+  yaw_resolution: 5 # degree
+  world_map: "./map_image/radiation_map1.png"
+
+robots:
+  robot_number: 3
+  robot_mode: "diff" # omni or diff
+  init_mode: 3 # 0 custom, 1 single row, 2, random, 3 circle
+  radius_list: [0.2, 0.2, 0.2] # first one is the default radius under other init_mode
+  vel_max: [1.5, 1.5, 1.5]
+  color_list: [[0, 128, 0], [255, 165, 0], [128, 0, 128]]
+  radius_exp: 0.2
+  interval: 1
+  square: [1, 1, 9, 9]
+  circular: [2, 8, 0.7]
+  random_bear: True
+  goal_threshold: 0.5
+
+  lidar2d:
+    id_list: [0, 1, 2] # only the robot id in this list will be equipped with lidar
+    install_pos: [0, 0, 0]
+    range_min: 0
+    range_max: 1
+    angle_min: 0
+    angle_max: 3.1415926
+    number: 12
+    scan_time: 0.1
+    noise: False
+    std: 0.2
+
+source:
+  number: 1
+  init_state: [[7, 2.5, 294000000]]
+  source_radius_list: [0.2]
+  square: [0, 0, 9, 9]
+  radius_exp: 0.2
+  world_map: "./map_image/radiation_map11.png"
