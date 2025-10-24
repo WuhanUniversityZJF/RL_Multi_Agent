@@ -327,12 +327,12 @@ if __name__ == '__main__':
     parser.add_argument("--env", default="multi_robot_world_10_3", type=str, help="Environment name.")
     parser.add_argument("--max_action", default=1.0, type=float, help="Action scale, [-max, max].")
     parser.add_argument('--episode_num', type=int, default=50000, help='total episode num during training procedure')
-    parser.add_argument("--evaluate_freq", type=float, default=20, help="Evaluate the policy every 'evaluate_freq' steps")
+    parser.add_argument("--evaluate_freq", type=float, default=20, help="Evaluate the policy every 'evaluate_freq' steps")# optional:50
     parser.add_argument("--evaluate_times", type=float, default=1, help="Evaluate times")
-    parser.add_argument("--warmup_steps", default=10000, type=int, help="Warmup steps without training.")
+    parser.add_argument("--warmup_steps", default=10000, type=int, help="Warmup steps without training.")# optional:5000
     parser.add_argument("--algorithm", type=str, default="MADDPG", help="MATD3 or MATD3_LSTM or MADDPG")
-    parser.add_argument("--buffer_size", type=int, default=int(1e6), help="The capacity of the replay buffer")
-    parser.add_argument("--batch_size", type=int, default=1024, help="Batch size")
+    parser.add_argument("--buffer_size", type=int, default=int(2e5), help="The capacity of the replay buffer")# avoid OOM
+    parser.add_argument("--batch_size", type=int, default=256, help="Batch size")# RTX_2050 suggested
     parser.add_argument("--hidden_dim", type=int, default=64, help="The number of neurons in hidden layers of the neural network")
     parser.add_argument("--noise_std", type=float, default=0.1, help="The std of Gaussian noise for exploration")
     parser.add_argument("--lr_a", type=float, default=1e-3, help="Learning rate of actor")
