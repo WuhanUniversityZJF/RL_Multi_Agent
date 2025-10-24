@@ -353,10 +353,10 @@ if __name__ == '__main__':
     parser.add_argument('--episode_num', type=int, default=50000, help='total episode num during training procedure')
     parser.add_argument("--evaluate_freq", type=float, default=20, help="Evaluate the policy every 'evaluate_freq' steps")
     parser.add_argument("--evaluate_times", type=float, default=1, help="Evaluate times")
-    parser.add_argument("--warmup_steps", default=10000, type=int, help="Warmup steps without training.")
+    parser.add_argument("--warmup_steps", default=10000, type=int, help="Warmup steps without training.")# optional:5000
     parser.add_argument("--algorithm", type=str, default="MATD3", help="MATD3 or MATD3_LSTM")
-    parser.add_argument("--buffer_size", type=int, default=int(1e6), help="The capacity of the replay buffer")
-    parser.add_argument("--batch_size", type=int, default=1024, help="Batch size")
+    parser.add_argument("--buffer_size", type=int, default=int(2e5), help="The capacity of the replay buffer")# avoid OOM
+    parser.add_argument("--batch_size", type=int, default=256, help="Batch size")# RTX_2050 suggested
     parser.add_argument("--hidden_dim", type=int, default=64, help="The number of neurons in hidden layers of the neural network")
     parser.add_argument("--noise_std", type=float, default=0.1, help="The std of Gaussian noise for exploration")
     parser.add_argument("--lr_a", type=float, default=1e-3, help="Learning rate of actor")
@@ -373,7 +373,7 @@ if __name__ == '__main__':
     # --------------------------------------MATD3--------------------------------------------------------------------
     parser.add_argument("--policy_noise", type=float, default=0.1, help="Target policy smoothing")
     parser.add_argument("--noise_clip", type=float, default=0.25, help="Clip noise")
-    parser.add_argument("--policy_update_freq", type=int, default=2, help="The frequency of policy updates")
+    parser.add_argument("--policy_update_freq", type=int, default=2, help="The frequency of policy updates")# optional:4
 
     args = parser.parse_args()
     args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
