@@ -1,2 +1,6 @@
-# RL_Multi_Agent
-在此次项目中，我设计并实现了一个基于多智能体深度强化学习的避障无人车放射源定位系统。我采用MADDPG、MASAC和MATD3三种算法，构建了多智能体协同框架，使无人车能够在复杂环境中自主探索、避障并高效定位放射源。通过优化算法结构，如双Q网络、延迟更新，以及优化参数配置，如奖励函数、网络架构，我提升了系统的稳定性和性能。在仿真环境中，我训练并测试了三种模型，对比分析了它们的定位精度、避障能力和协作效率。实验结果表明，MATD3在复杂场景中表现最优，而MASAC因探索策略导致轨迹重叠。最终，我验证了多智能体系统在动态环境中的实用性，为无人车技术在核应急等领域的应用提供了算法支持。
+Multi-Agent DRL for Obstacle-Avoidance UAV Radiation Source Localization  
+11/2024-12/2024  
+	Designed a multi-agent deep reinforcement learning UAV system for obstacle avoidance and radiation source localization in complex environments  
+	Implemented MADDPG, MASAC, and MATD3 with PyTorch to optimize UAV collaboration, obstacle avoidance, and localization efficiency, and accelerated training on NVIDIA RTX 2050 GPU  
+	Modeled isotropic gamma radiation and Poisson-distributed sensor noise to simulate radiation detection and noise interference, and built Q-value and policy networks with orthogonal initialization to enhance training stability  
+	Trained under a centralized-distributed framework in diverse scenarios, validating MATD3's superior stability and localization accuracy via performance metrics (policy loss, value loss, reward curves) and simulations
